@@ -22,16 +22,16 @@ $(function () { // wait for on-ready
 
   var Posts = Backbone.Collection.extend({
     model: Post,
-    localStorage: new Backbone.LocalStorage("posts")
+    firebase: new Backbone.Firebase("https://curriedav.firebaseio.com/")
+    //localStorage: new Backbone.LocalStorage("posts")
   });
 
   $("#addBtn").click(function () {
-    event.preventDefault();
     console.log("Spruce-Monster!");
 
     var newTitle = $("#title").val();
     var newContent = $("#content").val();
-    var newPostObj = {title: newTitle, content: newContent}
+    var newPostObj = {title: newTitle, content: newContent};
 
     app.collections.posts.create(newPostObj);
   });
@@ -42,6 +42,8 @@ $(function () { // wait for on-ready
 
   app.views.postTitles = new PostTitlesView({collection: app.collections.posts});
   
+  //app.views.addpost = new AddPost ({collection: app.collection.posts});
+
   app.collections.posts.fetch();
 
   window.app = app;
