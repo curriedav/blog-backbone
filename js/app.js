@@ -4,6 +4,8 @@ $(function () { // wait for on-ready
 
   var PostTitlesView = require('./views/postTitles');
 
+  var AddPost = require('./views/AddPost');
+
   var app = {};
 
   app.collections = {}
@@ -21,6 +23,17 @@ $(function () { // wait for on-ready
   var Posts = Backbone.Collection.extend({
     model: Post,
     localStorage: new Backbone.LocalStorage("posts")
+  });
+
+  $("#addBtn").click(function () {
+    event.preventDefault();
+    console.log("Spruce-Monster!");
+
+    var newTitle = $("#title").val();
+    var newContent = $("#content").val();
+    var newPostObj = {title: newTitle, content: newContent}
+
+    app.collections.posts.create(newPostObj);
   });
 
   app.collections.posts = new Posts();

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Backbone Example</title>
+  <title>The Echo Chamber.</title>
 
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,14 +16,37 @@
   <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
+	
 	<body class="container">
+		
+		<!-- Header -->
 		<div class="jumbotron">
 			<h1>The Echo Chamber.</h1>
 		</div>
+
+				<!-- NavBar -->
 		<div class="col-md-2 well">
 			<ul class="nav nav-pills nav-stacked" id="postTitles">
 			</ul>
 		</div>
-		<div id="posts" class="col-md-10"></div>
+
+		<!-- Form -->
+		<div class="col-md-10 well" id="form">
+			<h3>Add Post</h3>
+			<form role="form">
+			  <div class="form-group">
+			    <label for="title">Post Title</label>
+			    <input type="" class="form-control" id="title" placeholder="Enter title">
+			  </div>
+			  <div class="form-group">
+			    <label for="content">Post Content</label>
+			    <input type="" class="form-control" id="content" placeholder="Enter content">
+			  </div>
+			  <button type="submit" class="btn btn-default" id="addBtn">Submit</button>
+			</form>
+		</div>
+
+		<!-- Posts -->
+		<div id="posts" class="col-md-offset-2 col-md-10"></div>
 	</body>
 </html>
